@@ -1,95 +1,64 @@
 # Agentic Architecture Research
 
-This profile is dedicated to research and experimentation in **agentic system design**.
+This profile is a research hub dedicated to exploring and mapping **agentic system design**. 
 
-The focus is not only on building agents that achieve goals, but on designing systems that achieve those goals **with minimal cost**.
+Current discourse often treats AI agents as a magical departure from traditional software. Our foundational thesis is the opposite: **Agentic programming is simply the next logical abstraction layer in software engineering.** 
 
-In this context, **cost** is a broad metric that includes:
+We are moving away from hand-writing step-by-step logic and toward designing systems that translate intent into executable, verifiable steps. A useful way to conceptualize this layer is:
 
-- Tokens
-- Compute
-- Time
-- Human supervision
-- Energy
-- System complexity
-- Context size
-- Failure recovery overhead
-
-The central idea is that **agentic architectures should be engineered similarly to software systems**.  
-The goal is not simply capability, but **efficient capability**.
+`Intent → Execution Graph → Validation Loop`
 
 ---
 
-# Research Focus
+## The Core Problem: A Shift Toward Constraints
 
-Current experiments focus on improving the reliability and efficiency of multi-agent systems through structured architecture.
+Current AI workflows rely heavily on open-ended prompt engineering, massive context windows, and manual human supervision. **These approaches scale poorly.**
 
-Areas of investigation include:
+LLMs are inherently non-deterministic. Left unconstrained, this leads to unpredictable behavior, escalating costs, and systems that are difficult to debug. To build reliable software, engineering pressure naturally pushes toward structure. 
 
-- Deterministic runners vs non-deterministic agents
-- Intent-based execution models
-- Atomic task decomposition
-- Dependency graphs for task orchestration
-- Agent isolation and context injection
+The goal of this research is to explore how **structured architecture can replace brute-force prompting**—moving from open-ended agent loops to bounded, observable, and testable systems.
+
+---
+
+## Optimizing for a Superset of "Cost"
+
+Building an agent that *can* achieve a goal is no longer the primary challenge. The engineering challenge is designing systems that achieve those goals efficiently. In an agentic context, we optimize for a broad superset of cost:
+
+- **Financial:** Tokens, compute, and API calls.
+- **Temporal:** Generation speed, execution time, and network latency.
+- **Usability:** System complexity and the need for human-in-the-loop supervision.
+- **Failure Recovery:** The overhead of hallucination retry loops.
+
+---
+
+## Emerging Engineering Constraints
+
+To make multi-agent systems cheaper, more reliable, and reproducible, they must behave like engineering systems rather than improvisational tools. Our research operates on several emerging constraints:
+
+- **A Deterministic Control Plane:** Agents generate intents and propose plans; deterministic systems execute and validate them.
+- **Atomic Tasks:** Work must be decomposed into the smallest, independently verifiable units.
+- **Scoped Context:** Agents receive exactly and only the information required for a specific task.
+- **Hardcoded Routing:** State management and execution flow belong in standard software logic, not LLM-driven guesswork.
+- **Observable Execution:** Every step must leave an append-only trace for exact failure detection.
+
+---
+
+## Research Focus & Experiments
+
+This profile hosts experimental repositories investigating how to build reliable execution layers on top of non-deterministic agents. Active areas of exploration include:
+
+- Deterministic runners vs. non-deterministic agents
+- Structured task graphs and intent pipelines
 - Contract-driven development for agents
-- Failure detection and recovery
-- Token and context optimization
-- Agent lifecycle management
-- Reproducible agent workflows
-
----
-
-# Core Philosophy
-
-Agentic systems should behave more like **engineering systems** than improvisational tools.
-
-Key principles:
-
-- **Agents generate intents**
-- **Deterministic systems execute them**
-- **Tasks must be atomic**
-- **Context must be scoped**
-- **Workflows must be reproducible**
-
-The objective is to move agentic development from ad-hoc prompting toward **structured, programmable architectures**.
-
----
-
-# Experiments
-
-This profile hosts experimental repositories exploring:
-
-- Agent orchestration frameworks
-- Deterministic runners
-- Task graph systems
-- Intent pipelines
-- Agent memory models
-- Agent cost optimization
+- Atomic task decomposition
+- Agent isolation and precise context injection
+- Append-only state management and failure recovery
+- Token and latency optimization
 
 Each repository documents a specific architectural hypothesis and its implementation.
 
 ---
 
-# Why This Exists
+## Status
 
-Current AI workflows rely heavily on:
-
-- prompt engineering
-- large context windows
-- manual supervision
-
-These approaches scale poorly.
-
-This research explores how **structured architecture can replace brute-force prompting**, allowing systems to become:
-
-- cheaper
-- more reliable
-- easier to reason about
-- easier to reproduce
-
----
-
-# Status
-
-This is an **active research profile**.  
-Expect rapid iteration, experimental code, and architectural exploration.
+This is an **active research profile**. Expect rapid iteration, experimental code, and ongoing architectural exploration.
